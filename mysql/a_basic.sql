@@ -19,7 +19,7 @@ SHOW ENGINES;
 
 -- create table
 CREATE TABLE barang (
-    kode INT,
+    kode INT NOT NULL,
     nama VARCHAR(100),
     harga INT,
     jumlah INT
@@ -46,5 +46,23 @@ ALTER TABLE barang
 ALTER TABLE barang
     MODIFY nama VARCHAR(100) FIRST;
 
+ALTER TABLE barang
+    MODIFY kode INT NOT NULL;
 
+-- default value and enum
+ALTER TABLE barang 
+    ADD COLUMN size ENUM("M", "L") DEFAULT "M";
+    -- ADD COLUMN tanggal TIMESTAMP DEFAULT CURRENT_TIMESTAMP;
+
+-- insert data
+INSERT INTO barang (nama, kode, harga, jumlah) VALUES ("Mangga", 1, 5000, 200);
+
+-- select data from table
+SELECT * FROM barang;
+
+-- emptied table data
+TRUNCATE barang;
+
+-- delete table
+DROP TABLE barang;
 
