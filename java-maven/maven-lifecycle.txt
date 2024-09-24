@@ -1,0 +1,13 @@
+mvn clean
+mvn compile
+mvn test-compile
+mvn test
+mvn package
+mvn install
+mvn deploy
+
+//to make a distribution file with dependencies
+mvn clean package assembly:single
+
+//to run the distribution file
+java -jar ./target/java-maven-1.0-SNAPSHOT-jar-with-dependencies.jar
