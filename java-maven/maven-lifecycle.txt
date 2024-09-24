@@ -11,3 +11,9 @@ mvn clean package assembly:single
 
 //to run the distribution file
 java -jar ./target/java-maven-1.0-SNAPSHOT-jar-with-dependencies.jar
+
+
+//after become module
+mvn clean package assembly:single
+//run the jar file (should be in the main class folder)
+java -jar .\maven-app\target\maven-app-1.0-SNAPSHOT-jar-with-dependencies.jar
